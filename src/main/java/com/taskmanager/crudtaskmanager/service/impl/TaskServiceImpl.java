@@ -30,6 +30,11 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.save(task);
     }
 
+    @Override
+    public Task getTaskById(Long id) {
+        return taskRepository.findById(id).orElse(null);
+    }
+
     private Task mapTask(String title, boolean isCompleted) {
         Task task = new Task();
         task.setCompleted(isCompleted);

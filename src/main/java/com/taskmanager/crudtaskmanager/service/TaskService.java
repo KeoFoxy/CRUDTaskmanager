@@ -6,4 +6,6 @@ public interface TaskService {
     Task createTask(String title, boolean isCompleted);
 
     Task updateTask(Long id, String title, boolean isCompleted);
+
+    Task getTaskById(Long id);
 }
