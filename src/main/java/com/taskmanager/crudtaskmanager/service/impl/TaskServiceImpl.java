@@ -10,11 +10,11 @@ import java.time.LocalDate;
 
 @Service
 public class TaskServiceImpl implements TaskService {
-    private TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
 
     @Autowired
-    public TaskRepository getTaskRepository(TaskRepository taskRepository) {
-        return taskRepository;
+    public TaskServiceImpl(TaskRepository taskRepository) {
+         this.taskRepository = taskRepository;
     }
 
     @Override
