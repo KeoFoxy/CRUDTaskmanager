@@ -31,13 +31,14 @@ public class TaskController {
         return ResponseEntity.ok(task);
     }
 
-    @RequestMapping(value = "{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public ResponseEntity<Task> getTaskById(@PathVariable("id") Long id) {
         Task task = taskService.getTaskById(id);
         return ResponseEntity.ok(task);
     }
-//
-//    public void deleteTaskById(Long id) {
-//
-//    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void deleteTaskById(@PathVariable("id") Long id) {
+        taskService.deleteById(id);
+    }
 }

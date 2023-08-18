@@ -35,6 +35,11 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public void deleteById(Long id) {
+        taskRepository.deleteById(id);
+    }
+
     private Task mapTask(String title, boolean isCompleted) {
         Task task = new Task();
         task.setCompleted(isCompleted);

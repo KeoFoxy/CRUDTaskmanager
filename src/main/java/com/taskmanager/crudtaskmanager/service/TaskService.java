@@ -8,4 +8,6 @@ public interface TaskService {
     Task updateTask(Long id, String title, boolean isCompleted);
 
     Task getTaskById(Long id);
+
+    void deleteById(Long id);
 }
