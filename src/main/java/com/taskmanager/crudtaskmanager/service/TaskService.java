@@ -1,2 +1,7 @@
-package com.taskmanager.crudtaskmanager.service;public interface TaskService {
+package com.taskmanager.crudtaskmanager.service;
+
+import com.taskmanager.crudtaskmanager.entity.Task;
+
+public interface TaskService {
+    Task createTask(String title, boolean isCompleted);
 }
