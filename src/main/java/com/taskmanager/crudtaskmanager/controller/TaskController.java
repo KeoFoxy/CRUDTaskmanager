@@ -24,9 +24,10 @@ public class TaskController {
         return ResponseEntity.ok(task);
     }
 
-//    public Task updateTask(Task taskDto, Long taskId) {
-//
-//    }
+    @RequestMapping(method = RequestMethod.PUT)
+    public Task updateTask(@RequestBody Task taskDto) {
+        return taskService.updateTask(taskDto.getId(), taskDto.getTitle(), taskDto.isCompleted());
+    }
 //
 //    public Task getTaskById(Long id) {
 //

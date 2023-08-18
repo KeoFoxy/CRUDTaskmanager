@@ -19,11 +19,23 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public Task createTask(String title, boolean isCompleted) {
+        Task task = mapTask(title, isCompleted);
+        return taskRepository.save(task);
+    }
+
+    @Override
+    public Task updateTask(Long id, String title, boolean isCompleted) {
+        Task task = mapTask(title, isCompleted);
+        task.setId(id);
+        return taskRepository.save(task);
+    }
+
+    private Task mapTask(String title, boolean isCompleted) {
         Task task = new Task();
         task.setCompleted(isCompleted);
         task.setTitle(title);
         task.setCreationDate(LocalDate.now());
 
-        return taskRepository.save(task);
+        return task;
     }
 }
